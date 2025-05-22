@@ -7,7 +7,28 @@ document.addEventListener('DOMContentLoaded', function() {
       img.src = `${folder}/photo${i}.webp`;
       img.alt = `Image ${i}`;
       img.loading = 'lazy';
+      img.addEventListener('click', function() {
+        openMobileModal(img.src, img.alt);
+      });
       swiper.appendChild(img);
     }
+  });
+
+  // Modal logic
+  const modal = document.getElementById('mobileImageModal');
+  const modalImg = document.getElementById('mobileModalImg');
+  const modalClose = document.querySelector('.mobile-modal-close');
+  function openMobileModal(src, alt) {
+    modalImg.src = src;
+    modalImg.alt = alt;
+    modal.classList.add('show');
+  }
+  function closeMobileModal() {
+    modal.classList.remove('show');
+    modalImg.src = '';
+  }
+  modalClose.addEventListener('click', closeMobileModal);
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) closeMobileModal();
   });
 }); 

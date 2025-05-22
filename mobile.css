@@ -8,26 +8,52 @@ body {
   position: sticky;
   top: 0;
   width: 100vw;
-  background: rgba(30,30,30,0.85);
+  background: #000 !important;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   z-index: 100;
-  padding: 1rem 0;
+  padding: 0;
   text-align: center;
   font-size: 1.3rem;
   font-weight: bold;
   letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+}
+.mobile-home-icon {
+  height: 36px;
+  width: 36px;
+  display: block;
+  margin: 0 auto;
 }
 .mobile-hero {
-  padding: 2rem 1rem 1rem 1rem;
-  text-align: center;
+  position: relative;
+  background: url('images/hero.jpg') no-repeat center center/cover;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .mobile-hero h1 {
+  position: relative;
+  z-index: 2;
+  color: #fff;
   font-size: 2rem;
   font-weight: 700;
-  margin: 0;
-  color: #fff;
-  text-shadow: 0 2px 8px #0008;
+  text-shadow: 0 2px 8px #000a;
+  background: rgba(0,0,0,0.3);
+  padding: 0.5em 1em;
+  border-radius: 8px;
+}
+.mobile-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 1;
+  border-radius: 0 0 16px 16px;
 }
 .mobile-portfolio {
   padding: 1rem;
@@ -127,4 +153,35 @@ body {
   display: block;
   border-radius: 8px;
   background: #fff;
+}
+
+/* Fullscreen modal styles */
+.mobile-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.95);
+  justify-content: center;
+  align-items: center;
+}
+.mobile-modal.show {
+  display: flex;
+}
+.mobile-modal-img {
+  max-width: 96vw;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px #000a;
+  background: #222;
+}
+.mobile-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  font-size: 2.5rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10001;
+  text-shadow: 0 2px 8px #000a;
 } 
