@@ -25,20 +25,16 @@ body.modal-open {
   justify-content: center;
   height: 56px;
 }
-.mobile-home-icon-bg {
-  background: none !important;
-  box-shadow: none !important;
-  height: auto;
+.mobile-home-logo {
+  height: 44px;
   width: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.mobile-home-icon {
-  height: 128px;
-  width: 128px;
   display: block;
   margin: 0 auto;
+  padding: 2px 0 2px 0;
+  max-width: 90vw;
+}
+.mobile-home-icon-bg, .mobile-home-icon {
+  display: none !important;
 }
 .mobile-hero {
   position: relative;
