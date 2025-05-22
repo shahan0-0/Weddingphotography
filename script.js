@@ -38,6 +38,12 @@ document.addEventListener("DOMContentLoaded", function () {
             img.loading = "lazy";
 
             img.onload = function () {
+                // Add portrait or landscape class based on aspect ratio
+                if (img.naturalHeight > img.naturalWidth) {
+                    img.classList.add("portrait");
+                } else {
+                    img.classList.add("landscape");
+                }
                 gallery.appendChild(img);
                 imageIndex++;
                 loadNextImage(); // Load the next image
@@ -91,6 +97,28 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+
+    // Advanced JS-based justified layout for modal gallery
+    // This code assumes #modal-gallery uses display: grid with grid-template-columns: repeat(2, 1fr)
+    (function() {
+        const modalGallery = document.getElementById('modal-gallery');
+        if (modalGallery) {
+            modalGallery.style.display = 'grid';
+            modalGallery.style.gridTemplateColumns = 'repeat(2, 1fr)';
+            modalGallery.style.gap = '16px';
+            // Listen for new images being added
+            const observer = new MutationObserver(() => {
+                Array.from(modalGallery.children).forEach(img => {
+                    if (img.classList.contains('landscape')) {
+                        img.style.gridColumn = 'span 2';
+                    } else {
+                        img.style.gridColumn = 'span 1';
+                    }
+                });
+            });
+            observer.observe(modalGallery, { childList: true });
+        }
+    })();
 });
 
 // ✅ Service Worker Registration - Fixed Syntax
