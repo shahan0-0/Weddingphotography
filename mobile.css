@@ -242,4 +242,52 @@ body.modal-open {
 }
 .scroll-to-top:active {
   background: linear-gradient(135deg, #222 60%, #e63946 100%);
+}
+
+/* Spinner for image loading */
+.img-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #eee;
+  border-top: 4px solid #e63946;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.img-blur-placeholder {
+  filter: blur(12px) brightness(1.1);
+  position: absolute;
+  left: 0; top: 0; width: 100%; height: 100%;
+  z-index: 1;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+.gallery-img-wrapper, .modal-img-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #222;
+}
+
+.modal-img-wrapper {
+  height: auto;
+  max-width: 96vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 } 
