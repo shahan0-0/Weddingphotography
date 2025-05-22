@@ -6,6 +6,15 @@
     <title>Wedding Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <script>
+      // Redirect mobile users to mobile.html
+      if (
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) &&
+        !window.location.pathname.endsWith('mobile.html')
+      ) {
+        window.location.href = 'mobile.html';
+      }
+    </script>
 </head>
 <body>
     <!-- Navigation Bar -->

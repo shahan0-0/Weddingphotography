@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Portfolio - Mobile</title>
+    <link rel="stylesheet" href="mobile.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <script>
+      // Redirect desktop users to main site
+      if (window.innerWidth > 900) {
+        window.location.href = 'index.html';
+      }
+    </script>
+</head>
+<body>
+    <nav class="mobile-navbar">
+        <span class="mobile-title">Wedding Portfolio</span>
+    </nav>
+    <header class="mobile-hero">
+        <h1>Capturing Eternal Moments</h1>
+    </header>
+    <main>
+        <section class="mobile-portfolio">
+            <h2>Portfolio</h2>
+            <div class="mobile-gallery">
+                <div class="mobile-client">
+                    <h3>Shahan & Anvitha</h3>
+                    <div class="mobile-swiper" data-folder="clients/Shahan_Anvitha" data-count="5"></div>
+                </div>
+                <div class="mobile-client">
+                    <h3>Another Wedding</h3>
+                    <div class="mobile-swiper" data-folder="clients/Another_Client" data-count="6"></div>
+                </div>
+            </div>
+        </section>
+        <section class="mobile-contact">
+            <h2>Contact & Location</h2>
+            <p>No. 134, Kamalarama, 2nd A Cross Rd, 5th Block, 2nd Stage, Naagarabhaavi, Bengaluru, Karnataka 560072</p>
+            <a href="https://maps.google.com" target="_blank" class="address-link">View on Google Maps</a>
+            <div class="mobile-social">
+                <a href="https://wa.me/your-number" target="_blank" class="whatsapp-btn">
+                    <img src="assets/whatsapp-icon.png" alt="WhatsApp"> WhatsApp
+                </a>
+                <a href="https://instagram.com/keshav_phtography" target="_blank" class="instagram-btn">
+                    <img src="assets/instagram-icon.png" alt="Instagram"> Instagram
+                </a>
+            </div>
+            <img src="assets/qr-code.png" alt="QR Code" class="qr-code">
+        </section>
+    </main>
+    <script src="mobile.js"></script>
+</body>
+</html> 
