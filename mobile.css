@@ -22,38 +22,52 @@ body {
   justify-content: center;
   height: 56px;
 }
-.mobile-home-icon {
-  height: 36px;
-  width: 36px;
-  display: block;
+.mobile-home-icon-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 48px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px #0003;
   margin: 0 auto;
+}
+.mobile-home-icon {
+  height: 32px;
+  width: 32px;
+  display: block;
 }
 .mobile-hero {
   position: relative;
   background: url('images/hero.jpg') no-repeat center center/cover;
-  min-height: 160px;
+  min-height: 240px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.mobile-hero h1 {
-  position: relative;
-  z-index: 2;
-  color: #fff;
-  font-size: 2rem;
-  font-weight: 700;
-  text-shadow: 0 2px 8px #000a;
-  background: rgba(0,0,0,0.3);
-  padding: 0.5em 1em;
-  border-radius: 8px;
 }
 .mobile-hero::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.3);
+  background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.7) 100%);
   z-index: 1;
   border-radius: 0 0 16px 16px;
+}
+.mobile-hero-glass {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-size: 2.1rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 0.7em 1.2em;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.13);
+  backdrop-filter: blur(8px) saturate(140%);
+  -webkit-backdrop-filter: blur(8px) saturate(140%);
+  box-shadow: 0 2px 16px #0004;
+  margin: 0 1em;
 }
 .mobile-portfolio {
   padding: 1rem;

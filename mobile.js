@@ -10,7 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
       img.addEventListener('click', function() {
         openMobileModal(img.src, img.alt);
       });
-      swiper.appendChild(img);
+      img.onload = function() {
+        swiper.appendChild(img);
+      };
     }
   });
 
