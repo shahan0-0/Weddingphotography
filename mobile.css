@@ -360,4 +360,27 @@ body.modal-open .scroll-to-top {
 @keyframes bounce-arrow {
   0%, 100% { transform: translateY(-50%) translateX(0); }
   50% { transform: translateY(-50%) translateX(5px); }
+}
+
+/* Portrait and landscape thumbnail styles for mobile portfolio */
+.portrait-thumb {
+  width: 120px;
+  height: 240px;
+  object-fit: contain;
+  border-radius: 16px;
+  background: #222;
+  margin-right: 12px;
+  box-shadow: 0 2px 8px #0002;
+}
+.landscape-thumb {
+  width: 213px;
+  height: 160px;
+  object-fit: contain;
+  border-radius: 16px;
+  background: #222;
+  margin-right: 12px;
+  box-shadow: 0 2px 8px #0002;
+}
+.mobile-swiper img:last-child {
+  margin-right: 0;
 } 

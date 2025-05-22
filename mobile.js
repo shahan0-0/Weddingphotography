@@ -24,6 +24,13 @@ document.addEventListener('DOMContentLoaded', function() {
       img.src = `${folder}/photo${i}-thumb.webp`;
       img.alt = `Image ${i}`;
       img.loading = 'lazy';
+      img.addEventListener('load', function() {
+        if (img.naturalHeight > img.naturalWidth) {
+          img.classList.add('portrait-thumb');
+        } else {
+          img.classList.add('landscape-thumb');
+        }
+      });
       img.addEventListener('click', function() {
         openMobileModal(folder, i, img.alt, img.src);
       });
