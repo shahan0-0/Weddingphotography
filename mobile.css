@@ -4,6 +4,9 @@ body {
   background: #181818;
   color: #fff;
 }
+body.modal-open {
+  overflow: hidden !important;
+}
 .mobile-navbar {
   position: sticky;
   top: 0;
@@ -188,9 +191,11 @@ body {
   border-radius: 12px;
   box-shadow: 0 4px 24px #000a;
   background: #222;
+  display: block;
+  margin: 0 auto;
 }
 .mobile-modal-close {
-  position: absolute;
+  position: fixed;
   top: 18px;
   right: 24px;
   font-size: 2.5rem;
@@ -198,4 +203,15 @@ body {
   cursor: pointer;
   z-index: 10001;
   text-shadow: 0 2px 8px #000a;
+  background: rgba(0,0,0,0.3);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.mobile-modal-close:active {
+  background: rgba(0,0,0,0.6);
 } 

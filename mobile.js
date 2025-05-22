@@ -24,10 +24,12 @@ document.addEventListener('DOMContentLoaded', function() {
     modalImg.src = src;
     modalImg.alt = alt;
     modal.classList.add('show');
+    document.body.classList.add('modal-open');
   }
   function closeMobileModal() {
     modal.classList.remove('show');
     modalImg.src = '';
+    document.body.classList.remove('modal-open');
   }
   modalClose.addEventListener('click', closeMobileModal);
   modal.addEventListener('click', function(e) {
