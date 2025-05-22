@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
             img.src = `${folderPath}/photo${imageIndex}.webp`;
             img.alt = `Image ${imageIndex}`;
             img.classList.add("modal-img");
+            img.loading = "lazy";
 
             img.onload = function () {
                 gallery.appendChild(img);
