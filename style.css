@@ -126,9 +126,8 @@ section {
 
 /* Portfolio Gallery */
 .gallery {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 50px 20px;
     border-radius: 12px;
@@ -148,10 +147,14 @@ section {
 /* Ensure Portfolio Images Indicate Clickability */
 .gallery img {
     width: 100%;
-    max-width: 400px;
+    height: 300px;
+    max-width: 100%;
     border-radius: 12px;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+    object-fit: cover;
+    background: #222; /* fallback for transparent images */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .gallery img:hover {
@@ -162,26 +165,20 @@ section {
 /* Portfolio Image and Text Zoom Effect */
 .portfolio-item {
     position: relative;
-    overflow: hidden; /* Prevents overflow when zooming */
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 12px; /* Ensures rounded corners remain */
+    border-radius: 12px;
     transition: transform 0.3s ease-in-out;
+    background: rgba(0,0,0,0.15); /* subtle background for empty space */
+    min-height: 340px;
+    justify-content: center;
 }
 
 /* Apply zoom effect to both image and text */
 .portfolio-item:hover {
     transform: scale(1.05); /* Increases size on hover */
-}
-
-/* Ensure Portfolio Images Indicate Clickability */
-.gallery img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out, border-radius 0.3s ease-in-out;
 }
 
 /* Enlarge Image on Hover with Rounded Corners */
