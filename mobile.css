@@ -25,7 +25,7 @@ body.modal-open {
   justify-content: center;
   height: 56px;
 }
-.mobile-home-logo {
+.mobile-home-icon {
   height: 44px;
   width: auto;
   display: block;
@@ -33,7 +33,7 @@ body.modal-open {
   padding: 2px 0 2px 0;
   max-width: 90vw;
 }
-.mobile-home-icon-bg, .mobile-home-icon {
+.mobile-home-icon-bg, .mobile-home-logo {
   display: none !important;
 }
 .mobile-hero {
