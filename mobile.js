@@ -35,4 +35,17 @@ document.addEventListener('DOMContentLoaded', function() {
   modal.addEventListener('click', function(e) {
     if (e.target === modal) closeMobileModal();
   });
+
+  // Scroll to top button logic
+  const scrollBtn = document.getElementById('scrollToTopBtn');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 200) {
+      scrollBtn.classList.add('show');
+    } else {
+      scrollBtn.classList.remove('show');
+    }
+  });
+  scrollBtn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 }); 

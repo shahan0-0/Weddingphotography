@@ -26,20 +26,19 @@ body.modal-open {
   height: 56px;
 }
 .mobile-home-icon-bg {
+  background: none !important;
+  box-shadow: none !important;
+  height: auto;
+  width: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 48px;
-  width: 48px;
-  background: #fff;
-  border-radius: 50%;
-  box-shadow: 0 2px 8px #0003;
-  margin: 0 auto;
 }
 .mobile-home-icon {
-  height: 32px;
-  width: 32px;
+  height: 128px;
+  width: 128px;
   display: block;
+  margin: 0 auto;
 }
 .mobile-hero {
   position: relative;
@@ -181,6 +180,7 @@ body.modal-open {
   background: rgba(0,0,0,0.95);
   justify-content: center;
   align-items: center;
+  overflow: hidden !important;
 }
 .mobile-modal.show {
   display: flex;
@@ -214,4 +214,36 @@ body.modal-open {
 }
 .mobile-modal-close:active {
   background: rgba(0,0,0,0.6);
+}
+.mobile-modal::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Scroll to top button */
+.scroll-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 28px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e63946 60%, #222 100%);
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 16px #0006;
+  font-size: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, background 0.2s;
+  z-index: 10010;
+}
+.scroll-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+.scroll-to-top:active {
+  background: linear-gradient(135deg, #222 60%, #e63946 100%);
 } 
