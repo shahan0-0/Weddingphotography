@@ -2,6 +2,22 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.mobile-swiper').forEach(swiper => {
     const folder = swiper.getAttribute('data-folder');
     const count = parseInt(swiper.getAttribute('data-count'));
+    // Add scroll indicator
+    const indicator = document.createElement('div');
+    indicator.className = 'scroll-indicator';
+    indicator.innerHTML = '<svg viewBox="0 0 24 24"><path d="M8 5l8 7-8 7"/></svg>';
+    swiper.appendChild(indicator);
+    // Hide indicator when scrolled to end
+    function updateIndicator() {
+      if (swiper.scrollWidth - swiper.scrollLeft - swiper.clientWidth < 8) {
+        indicator.classList.add('hide');
+      } else {
+        indicator.classList.remove('hide');
+      }
+    }
+    swiper.addEventListener('scroll', updateIndicator);
+    window.addEventListener('resize', updateIndicator);
+    setTimeout(updateIndicator, 100); // Initial state
     for (let i = 1; i <= count; i++) {
       // Wrapper for spinner/placeholder and image
       const wrapper = document.createElement('div');
