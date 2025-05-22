@@ -52,6 +52,13 @@ document.addEventListener("DOMContentLoaded", function () {
             img.onerror = function () {
                 if (imageIndex === 1) {
                     console.error("No images found in the folder!");
+                } else {
+                    // All images loaded, now reorder: landscape first, then portrait
+                    const landscape = Array.from(gallery.querySelectorAll('.landscape'));
+                    const portrait = Array.from(gallery.querySelectorAll('.portrait'));
+                    gallery.innerHTML = '';
+                    landscape.forEach(img => gallery.appendChild(img));
+                    portrait.forEach(img => gallery.appendChild(img));
                 }
             };
         }
