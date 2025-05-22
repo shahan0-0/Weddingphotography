@@ -19,37 +19,18 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', updateIndicator);
     setTimeout(updateIndicator, 100); // Initial state
     for (let i = 1; i <= count; i++) {
-      // Wrapper for spinner/placeholder and image
-      const wrapper = document.createElement('div');
-      wrapper.className = 'gallery-img-wrapper';
-      // Blurred placeholder (optional, fallback to thumbnail if no -blur)
-      const blur = document.createElement('img');
-      blur.className = 'img-blur-placeholder';
-      blur.src = `${folder}/photo${i}-thumb.webp`;
-      wrapper.appendChild(blur);
-      // Spinner
-      const spinner = document.createElement('div');
-      spinner.className = 'img-spinner';
-      wrapper.appendChild(spinner);
       // Thumbnail
       const img = document.createElement('img');
       img.src = `${folder}/photo${i}-thumb.webp`;
       img.alt = `Image ${i}`;
       img.loading = 'lazy';
-      img.style.opacity = '0';
-      img.addEventListener('load', function() {
-        spinner.style.display = 'none';
-        blur.style.display = 'none';
-        img.style.opacity = '1';
-      });
       img.addEventListener('click', function() {
-        openMobileModal(folder, i, img.alt, blur.src);
+        openMobileModal(folder, i, img.alt, img.src);
       });
       img.onerror = function() {
-        wrapper.remove();
+        img.remove();
       };
-      wrapper.appendChild(img);
-      swiper.appendChild(wrapper);
+      swiper.appendChild(img);
     }
   });
 
