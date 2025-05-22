@@ -481,3 +481,110 @@ body.modal-open {
     /* Center alignment */
     text-align: center;
 }
+
+/* --- Mobile Friendly Styles --- */
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0;
+    position: static;
+  }
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+  }
+  .navbar ul li a {
+    font-size: 1.1rem;
+    padding: 8px 0;
+    display: block;
+    width: 100vw;
+    text-align: center;
+  }
+  .nav-left {
+    margin-bottom: 10px;
+  }
+  .hero {
+    height: 40vh;
+    padding: 20px 0;
+  }
+  .hero h1 {
+    font-size: 2rem;
+    padding: 10px 10px;
+  }
+  .section-title {
+    font-size: 1.2rem;
+    padding: 8px 10px;
+  }
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
+    gap: 8px;
+    padding: 10px 2px;
+  }
+  .portfolio-item {
+    min-height: 120px;
+    border-radius: 8px;
+  }
+  .gallery img {
+    height: 120px;
+    border-radius: 8px;
+  }
+  .image-name {
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .modal-content {
+    max-width: 98vw;
+    max-height: 98vh;
+    padding: 0;
+  }
+  #modal-gallery {
+    column-count: 1 !important;
+    column-gap: 8px;
+    max-width: 98vw;
+    padding-bottom: 10px;
+  }
+  .modal-img {
+    margin-bottom: 8px;
+    border-radius: 8px;
+    max-width: 98vw;
+    max-height: 60vh;
+  }
+  .close {
+    top: 5px;
+    right: 10px;
+    font-size: 2rem;
+  }
+  .contact-location-container {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 0 2vw;
+  }
+  .address-section {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  .qr-code {
+    width: 100px;
+  }
+  .social-buttons {
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .social-links {
+    font-size: 1rem;
+    padding: 4px 6px;
+    border-radius: 6px;
+  }
+  .whatsapp-btn img, .instagram-btn img {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+  }
+}
