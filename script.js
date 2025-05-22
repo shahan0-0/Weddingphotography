@@ -15,55 +15,59 @@ document.addEventListener("DOMContentLoaded", function () {
     function openGallery(folderPath) {
         const modal = document.getElementById("imageModal");
         const gallery = document.getElementById("modal-gallery");
-
         if (!modal || !gallery) {
             console.error("Modal or gallery element not found!");
             return;
         }
-
         gallery.innerHTML = ""; // Clear previous images
-        modal.style.display = "flex"; // Show modal before animation
+        modal.style.display = "flex";
         setTimeout(() => {
-            modal.classList.add("show"); // Trigger fade-in animation
+            modal.classList.add("show");
         }, 10);
         document.body.classList.add("modal-open");
 
-        let imageIndex = 1;
+        // Get the count from the clicked portfolio item
+        const item = document.querySelector(`.portfolio-item[data-folder="${folderPath}"]`);
+        const count = item ? parseInt(item.getAttribute("data-count")) : 1;
 
-        function loadNextImage() {
+        let loadedImages = [];
+        let loaded = 0;
+
+        for (let i = 1; i <= count; i++) {
             let img = document.createElement("img");
-            img.src = `${folderPath}/photo${imageIndex}.webp`;
-            img.alt = `Image ${imageIndex}`;
+            img.src = `${folderPath}/photo${i}.webp`;
+            img.alt = `Image ${i}`;
             img.classList.add("modal-img");
             img.loading = "lazy";
-
             img.onload = function () {
-                // Add portrait or landscape class based on aspect ratio
                 if (img.naturalHeight > img.naturalWidth) {
                     img.classList.add("portrait");
                 } else {
                     img.classList.add("landscape");
                 }
-                gallery.appendChild(img);
-                imageIndex++;
-                loadNextImage(); // Load the next image
+                loadedImages[i - 1] = img;
+                loaded++;
+                if (loaded === count) {
+                    // All images loaded, reorder and append
+                    const landscape = loadedImages.filter(img => img && img.classList.contains('landscape'));
+                    const portrait = loadedImages.filter(img => img && img.classList.contains('portrait'));
+                    gallery.innerHTML = '';
+                    landscape.forEach(img => gallery.appendChild(img));
+                    portrait.forEach(img => gallery.appendChild(img));
+                }
             };
-
             img.onerror = function () {
-                if (imageIndex === 1) {
-                    console.error("No images found in the folder!");
-                } else {
-                    // All images loaded, now reorder: landscape first, then portrait
-                    const landscape = Array.from(gallery.querySelectorAll('.landscape'));
-                    const portrait = Array.from(gallery.querySelectorAll('.portrait'));
+                loaded++;
+                if (loaded === count) {
+                    // All images attempted, append what loaded
+                    const landscape = loadedImages.filter(img => img && img.classList.contains('landscape'));
+                    const portrait = loadedImages.filter(img => img && img.classList.contains('portrait'));
                     gallery.innerHTML = '';
                     landscape.forEach(img => gallery.appendChild(img));
                     portrait.forEach(img => gallery.appendChild(img));
                 }
             };
         }
-
-        loadNextImage();
     }
 
     function closeModal() {
