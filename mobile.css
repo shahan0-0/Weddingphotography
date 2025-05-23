@@ -71,6 +71,8 @@ body.modal-open {
   background: none !important;
   box-shadow: none !important;
   border: none !important;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 .mobile-portfolio h2 {
   font-size: 1.2rem;
@@ -242,9 +244,8 @@ body.modal-open {
 .scroll-to-top {
   position: fixed;
   bottom: 24px;
-  left: 24px;
-  top: auto;
-  right: auto;
+  right: 24px;
+  left: auto;
   z-index: 10020;
   background: #232323;
   color: #fff;
@@ -260,11 +261,14 @@ body.modal-open {
   font-size: 2.1rem;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
   outline: none;
+  margin: 0;
 }
 .scroll-to-top img {
   width: 28px;
   height: 28px;
   filter: invert(1);
+  display: block;
+  margin: 0 auto;
 }
 .scroll-to-top:hover, .scroll-to-top:focus {
   background: #e63946;
@@ -395,8 +399,8 @@ body.modal-open .scroll-to-top {
   position: fixed;
   bottom: 24px;
   left: 24px;
-  top: auto;
   right: auto;
+  top: auto;
   z-index: 10020;
   background: #232323;
   color: #fff;
@@ -411,11 +415,14 @@ body.modal-open .scroll-to-top {
   padding: 0;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
   outline: none;
+  margin: 0;
 }
 .view-desktop-btn img {
   width: 28px;
   height: 28px;
   filter: invert(1);
+  display: block;
+  margin: 0 auto;
 }
 .view-desktop-btn:hover, .view-desktop-btn:focus {
   background: #e63946;
@@ -424,21 +431,23 @@ body.modal-open .scroll-to-top {
   transform: translateY(-2px) scale(1.04);
 }
 @media (max-width: 600px) {
+  .scroll-to-top {
+    bottom: 12px;
+    right: 12px;
+    width: 44px;
+    height: 44px;
+  }
+  .scroll-to-top img {
+    width: 22px;
+    height: 22px;
+  }
   .view-desktop-btn {
-    bottom: 16px;
+    bottom: 12px;
     left: 12px;
     width: 44px;
     height: 44px;
   }
   .view-desktop-btn img {
-    width: 22px;
-    height: 22px;
-  }
-  .scroll-to-top {
-    width: 44px;
-    height: 44px;
-  }
-  .scroll-to-top img {
     width: 22px;
     height: 22px;
   }
