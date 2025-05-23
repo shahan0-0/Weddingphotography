@@ -251,7 +251,10 @@ body.modal-open {
 
 /* Beautiful, glassy scroll-to-top button */
 .scroll-to-top {
-  position: static;
+  position: fixed;
+  right: 16px;
+  bottom: calc(env(safe-area-inset-bottom, 12px) + 16px);
+  z-index: 1100;
   background: #232323;
   color: #fff;
   border: none;
@@ -267,7 +270,6 @@ body.modal-open {
   transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
   outline: none;
   margin: 0;
-  margin-bottom: env(safe-area-inset-bottom, 16px);
 }
 .scroll-to-top img {
   width: 28px;
@@ -402,7 +404,10 @@ body.modal-open .scroll-to-top {
 }
 
 .view-desktop-btn {
-  position: static;
+  position: fixed;
+  left: 16px;
+  bottom: calc(env(safe-area-inset-bottom, 12px) + 16px);
+  z-index: 1100;
   background: #232323;
   color: #fff;
   border: none;
@@ -434,20 +439,20 @@ body.modal-open .scroll-to-top {
 }
 @media (max-width: 600px) {
   .scroll-to-top {
-    bottom: 12px;
-    right: 12px;
     width: 44px;
     height: 44px;
+    right: 10px;
+    bottom: calc(env(safe-area-inset-bottom, 8px) + 10px);
   }
   .scroll-to-top img {
     width: 22px;
     height: 22px;
   }
   .view-desktop-btn {
-    bottom: 12px;
-    left: 12px;
     width: 44px;
     height: 44px;
+    left: 10px;
+    bottom: calc(env(safe-area-inset-bottom, 8px) + 10px);
   }
   .view-desktop-btn img {
     width: 22px;
@@ -460,68 +465,17 @@ body.modal-open .view-desktop-btn {
 }
 
 .bottom-bar {
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
+  position: static !important;
   width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 24px;
   background: none;
   pointer-events: none;
-  padding-bottom: env(safe-area-inset-bottom, 12px);
   margin: 0;
-  z-index: 1000;
+  padding: 0;
+  z-index: 1;
 }
 .bottom-bar button {
   pointer-events: auto;
-  margin: 0;
-}
-.view-desktop-btn, .scroll-to-top {
-  position: static;
-  background: #232323;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  box-shadow: 0 2px 12px #0008;
-  width: 52px;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  font-size: 2.1rem;
-  margin: 0;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
-  outline: none;
-}
-.view-desktop-btn img, .scroll-to-top img {
-  width: 28px;
-  height: 28px;
-  filter: invert(1);
-  display: block;
-  margin: 0 auto;
-}
-.view-desktop-btn:hover, .scroll-to-top:hover {
-  background: #e63946;
-  color: #fff;
-  box-shadow: 0 4px 24px #e6394633;
-  transform: translateY(-2px) scale(1.08);
-}
-@media (max-width: 600px) {
-  .bottom-bar {
-    padding: 0 8px 8px 8px;
-  }
-  .view-desktop-btn, .scroll-to-top {
-    width: 44px;
-    height: 44px;
-  }
-  .view-desktop-btn img, .scroll-to-top img {
-    width: 22px;
-    height: 22px;
-  }
-}
-body.modal-open .scroll-to-top,
-body.modal-open .view-desktop-btn {
-  display: none !important;
 } 
