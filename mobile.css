@@ -460,19 +460,22 @@ body.modal-open .view-desktop-btn {
 }
 
 .bottom-bar {
-  position: static;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
   width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 24px 12px 24px;
+  padding: 0 24px;
   background: none;
   pointer-events: none;
-  margin-top: 32px;
-  margin-bottom: env(safe-area-inset-bottom, 16px);
+  padding-bottom: env(safe-area-inset-bottom, 12px);
+  margin: 0;
+  z-index: 1000;
 }
 .bottom-bar button {
   pointer-events: auto;
+  margin: 0;
 }
 .view-desktop-btn, .scroll-to-top {
   position: static;
