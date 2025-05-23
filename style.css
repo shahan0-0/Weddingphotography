@@ -914,17 +914,9 @@ section#portfolio {
   }
 }
 
-/* --- PORTFOLIO GALLERY: CLEAN ROUNDED CORNERS --- */
-.gallery {
-    border-radius: 0 !important;
-    overflow: visible;
-}
-.portfolio-item {
-    border-radius: 0 !important;
-    overflow: visible;
-}
-.gallery img {
-    border-radius: 0 !important;
+/* Remove global border-radius: 0 for .gallery img and .portfolio-item */
+.gallery img, .portfolio-item {
+  border-radius: unset;
 }
 
 /* --- CONTACT SECTION: REMOVE TEXT BACKGROUNDS --- */
