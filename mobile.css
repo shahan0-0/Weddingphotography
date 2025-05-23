@@ -1,9 +1,17 @@
+body, html {
+  overflow-x: hidden !important;
+  scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
 body {
   font-family: system-ui, Arial, sans-serif;
   margin: 0;
   background: #181818;
   color: #fff;
-  padding-bottom: 72px;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: 0 !important;
 }
 body.modal-open {
   overflow: hidden !important;
