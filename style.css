@@ -891,6 +891,27 @@ section#portfolio {
     justify-content: center;
     align-items: center;
   }
+  .gallery {
+    gap: 28px !important;
+  }
+  .portfolio-item {
+    border-radius: 18px;
+    overflow: hidden;
+    transition: box-shadow 0.3s, z-index 0.2s;
+  }
+  .gallery img {
+    border-radius: 18px;
+    transition: transform 0.3s, box-shadow 0.3s, border-radius 0.3s;
+  }
+  .portfolio-item:hover {
+    z-index: 2;
+    position: relative;
+    box-shadow: 0 8px 32px #0005, 0 2px 8px #e6b98044;
+  }
+  .portfolio-item:hover img {
+    box-shadow: 0 8px 32px #0005, 0 2px 8px #e6b98044;
+    border-radius: 18px;
+  }
 }
 
 /* --- PORTFOLIO GALLERY: CLEAN ROUNDED CORNERS --- */
