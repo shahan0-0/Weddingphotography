@@ -1041,3 +1041,25 @@ body.force-desktop {
   color: #fff !important;
   background: #e63946 !important;
 }
+
+body.force-desktop .gallery {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 28px !important;
+  justify-content: center !important;
+  padding: 50px 20px !important;
+}
+body.force-desktop .portfolio-item {
+  width: 400px !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+body.force-desktop .gallery img {
+  width: 100% !important;
+  max-width: 400px !important;
+  height: auto !important;
+  object-fit: cover !important;
+}
