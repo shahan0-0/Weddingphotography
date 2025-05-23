@@ -2,22 +2,15 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.mobile-swiper').forEach(swiper => {
     const folder = swiper.getAttribute('data-folder');
     const count = parseInt(swiper.getAttribute('data-count'));
-    // Add scroll indicator
-    const indicator = document.createElement('div');
-    indicator.className = 'scroll-indicator';
-    indicator.innerHTML = '<svg viewBox="0 0 24 24"><path d="M8 5l8 7-8 7"/></svg>';
-    swiper.appendChild(indicator);
-    // Hide indicator when scrolled to end
-    function updateIndicator() {
-      if (swiper.scrollWidth - swiper.scrollLeft - swiper.clientWidth < 8) {
-        indicator.classList.add('hide');
-      } else {
-        indicator.classList.remove('hide');
+    // Animate scroll right and back on load
+    setTimeout(() => {
+      if (swiper.scrollWidth > swiper.clientWidth) {
+        swiper.scrollTo({ left: 60, behavior: 'smooth' });
+        setTimeout(() => {
+          swiper.scrollTo({ left: 0, behavior: 'smooth' });
+        }, 900);
       }
-    }
-    swiper.addEventListener('scroll', updateIndicator);
-    window.addEventListener('resize', updateIndicator);
-    setTimeout(updateIndicator, 100); // Initial state
+    }, 600);
     for (let i = 1; i <= count; i++) {
       // Thumbnail
       const img = document.createElement('img');
