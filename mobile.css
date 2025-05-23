@@ -385,4 +385,39 @@ body.modal-open .scroll-to-top {
 }
 .mobile-swiper img:last-child {
   margin-right: 0;
+}
+
+.view-desktop-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 10020;
+  background: rgba(255,255,255,0.18);
+  color: #222;
+  font-family: 'Inter', 'Poppins', 'Montserrat', Arial, sans-serif;
+  font-size: 1.08rem;
+  font-weight: 700;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 22px;
+  box-shadow: 0 4px 24px #0003;
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+  outline: none;
+}
+.view-desktop-btn:hover, .view-desktop-btn:focus {
+  background: #e63946;
+  color: #fff;
+  box-shadow: 0 8px 32px #e6394633;
+  transform: translateY(-2px) scale(1.04);
+}
+@media (max-width: 600px) {
+  .view-desktop-btn {
+    padding: 12px 16px;
+    font-size: 1rem;
+    bottom: 16px;
+    right: 12px;
+  }
 } 
