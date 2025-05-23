@@ -15,6 +15,12 @@
       ) {
         window.location.href = 'mobile.html';
       }
+      // Force desktop mode if ?desktop=1 is present
+      if (window.location.search.indexOf('desktop=1') !== -1) {
+        document.addEventListener('DOMContentLoaded', function() {
+          document.body.classList.add('force-desktop');
+        });
+      }
     </script>
 </head>
 <body>

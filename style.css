@@ -1003,3 +1003,29 @@ h1, h2, h3, .section-title, .portfolio-title {
     font-weight: 800 !important;
     letter-spacing: 1.5px;
 }
+
+body.force-desktop .navbar,
+body.force-desktop .navbar ul,
+body.force-desktop .navbar ul li a,
+body.force-desktop .nav-left,
+body.force-desktop .hero,
+body.force-desktop .hero h1,
+body.force-desktop .section-title,
+body.force-desktop .gallery,
+body.force-desktop .portfolio-item,
+body.force-desktop .gallery img,
+body.force-desktop .image-name,
+body.force-desktop .modal-content,
+body.force-desktop #modal-gallery,
+body.force-desktop .modal-img,
+body.force-desktop .close,
+body.force-desktop .contact-location-container,
+body.force-desktop .address-section,
+body.force-desktop .qr-code,
+body.force-desktop .social-buttons,
+body.force-desktop .social-links {
+  all: unset;
+}
+body.force-desktop {
+  /* Reset font size and layout to desktop defaults */
+}
