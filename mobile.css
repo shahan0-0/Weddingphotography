@@ -67,8 +67,10 @@ body.modal-open {
   box-shadow: 0 2px 16px #0004;
   margin: 0 1em;
 }
-.mobile-portfolio {
-  padding: 1rem;
+.mobile-portfolio, .mobile-gallery {
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 .mobile-portfolio h2 {
   font-size: 1.2rem;
