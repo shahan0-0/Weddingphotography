@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <script>
-      // Redirect mobile users to mobile.html (user-agent only, not on resize)
+      // Redirect mobile users to mobile.html (user-agent only, not on resize), unless ?desktop=1 is present
       if (
         /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) &&
-        !window.location.pathname.endsWith('mobile.html')
+        !window.location.pathname.endsWith('mobile.html') &&
+        window.location.search.indexOf('desktop=1') === -1
       ) {
         window.location.href = 'mobile.html';
       }
