@@ -1063,3 +1063,54 @@ body.force-desktop .gallery img {
   height: auto !important;
   object-fit: cover !important;
 }
+
+body.force-desktop #portfolio,
+body.force-desktop .contact-location-container {
+  min-width: 900px !important;
+  max-width: 1100px !important;
+  margin: 0 auto 48px auto !important;
+  padding: 60px 40px 40px 40px !important;
+  box-sizing: border-box !important;
+  border-radius: 36px !important;
+}
+body.force-desktop .contact-location-container {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 64px !important;
+  min-height: 320px !important;
+  margin-top: 48px !important;
+}
+body.force-desktop .address-section {
+  flex: 1 1 0 !important;
+  max-width: 520px !important;
+  margin: 0 !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+  gap: 18px !important;
+  justify-content: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+body.force-desktop .address-content {
+  flex: 1 1 0 !important;
+  max-width: 320px !important;
+  margin: 0 !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+  gap: 32px !important;
+  display: flex !important;
+}
+body.force-desktop .qr-code {
+  margin: 0 0 24px 0 !important;
+  align-self: center !important;
+}
+body.force-desktop .social-buttons {
+  flex-direction: row !important;
+  gap: 32px !important;
+  margin-top: 0 !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
