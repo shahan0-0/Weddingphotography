@@ -1030,6 +1030,9 @@ body.force-desktop .social-links {
 }
 body.force-desktop {
   /* Reset font size and layout to desktop defaults */
+  overflow-x: auto !important;
+  background: #181818 !important;
+  min-height: 100vh !important;
 }
 
 .address-link {
