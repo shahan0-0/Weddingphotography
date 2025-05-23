@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta id="viewportMeta" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Wedding Portfolio - Mobile</title>
     <link rel="stylesheet" href="mobile.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -59,5 +59,27 @@
         <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Scroll to top"><img src="assets/up-arrow.svg" alt="Scroll to top" style="width: 28px; height: 28px; display: block; margin: 0 auto;" /></button>
     </div>
     <script src="mobile.js"></script>
+    <script>
+      // Allow zooming only when modal is open
+      const viewportMeta = document.getElementById('viewportMeta');
+      const modal = document.getElementById('mobileImageModal');
+      let originalViewport = viewportMeta.getAttribute('content');
+      function enableZoom() {
+        viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes');
+      }
+      function disableZoom() {
+        viewportMeta.setAttribute('content', originalViewport);
+      }
+      if (modal) {
+        const observer = new MutationObserver(() => {
+          if (modal.classList.contains('show')) {
+            enableZoom();
+          } else {
+            disableZoom();
+          }
+        });
+        observer.observe(modal, { attributes: true, attributeFilter: ['class'] });
+      }
+    </script>
 </body>
 </html> 
