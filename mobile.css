@@ -67,7 +67,7 @@ body.modal-open {
   box-shadow: 0 2px 16px #0004;
   margin: 0 1em;
 }
-.mobile-portfolio, .mobile-gallery {
+.mobile-portfolio, .mobile-gallery, .mobile-swiper {
   background: none !important;
   box-shadow: none !important;
   border: none !important;
@@ -108,7 +108,7 @@ body.modal-open {
   width: auto;
   object-fit: contain;
   border-radius: 16px;
-  background: #222;
+  background: none !important;
   box-shadow: 0 2px 8px #0002;
   margin: 0;
   scroll-snap-align: center;

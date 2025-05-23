@@ -1,16 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // Animate scroll right and back when .mobile-swiper enters viewport, only once
+  const animatedSwipers = new WeakSet();
+  const swiperObserver = new window.IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !animatedSwipers.has(entry.target)) {
+        const swiper = entry.target;
+        if (swiper.scrollWidth > swiper.clientWidth) {
+          swiper.scrollTo({ left: 80, behavior: 'smooth' });
+          setTimeout(() => {
+            swiper.scrollTo({ left: 0, behavior: 'smooth' });
+          }, 1600);
+        }
+        animatedSwipers.add(swiper);
+      }
+    });
+  }, { threshold: 0.4 });
+
   document.querySelectorAll('.mobile-swiper').forEach(swiper => {
     const folder = swiper.getAttribute('data-folder');
     const count = parseInt(swiper.getAttribute('data-count'));
-    // Animate scroll right and back on load
-    setTimeout(() => {
-      if (swiper.scrollWidth > swiper.clientWidth) {
-        swiper.scrollTo({ left: 60, behavior: 'smooth' });
-        setTimeout(() => {
-          swiper.scrollTo({ left: 0, behavior: 'smooth' });
-        }, 900);
-      }
-    }, 600);
+    swiperObserver.observe(swiper);
     for (let i = 1; i <= count; i++) {
       // Thumbnail
       const img = document.createElement('img');
