@@ -15,7 +15,9 @@
       }
     </script>
 </head>
-<body>
+<body style="background: #000;">
+    <!-- iOS Notch Black Cover -->
+    <div style="position: fixed; top: 0; left: 0; right: 0; height: env(safe-area-inset-top); background: #000; z-index: 10000;"></div>
     <nav class="mobile-navbar">
         <img src="images/home-icon.png" alt="Home" class="mobile-home-icon">
     </nav>
@@ -62,6 +64,13 @@
     </div>
     <script src="mobile.js"></script>
     <script>
+      // Prevent pinch-to-zoom on iOS
+      document.addEventListener('gesturestart', function (e) { e.preventDefault(); });
+      document.addEventListener('touchmove', function (e) {
+        if (e.scale !== undefined && e.scale !== 1) {
+          e.preventDefault();
+        }
+      }, { passive: false });
       // Allow zooming only when modal is open
       const viewportMeta = document.getElementById('viewportMeta');
       const modal = document.getElementById('mobileImageModal');

@@ -11,7 +11,7 @@ body {
   background: #181818;
   color: #fff;
   padding-top: env(safe-area-inset-top);
-  padding-bottom: 0 !important;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 body.modal-open {
   overflow: hidden !important;
@@ -267,6 +267,7 @@ body.modal-open {
   transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
   outline: none;
   margin: 0;
+  margin-bottom: env(safe-area-inset-bottom, 16px);
 }
 .scroll-to-top img {
   width: 28px;
@@ -468,6 +469,7 @@ body.modal-open .view-desktop-btn {
   background: none;
   pointer-events: none;
   margin-top: 32px;
+  margin-bottom: env(safe-area-inset-bottom, 16px);
 }
 .bottom-bar button {
   pointer-events: auto;
