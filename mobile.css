@@ -478,4 +478,51 @@ body.modal-open .view-desktop-btn {
 }
 .bottom-bar button {
   pointer-events: auto;
+}
+
+.contact-bottom-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-top: 24px;
+  padding-bottom: 8px;
+}
+.scroll-to-top, .view-desktop-btn {
+  position: static !important;
+  margin: 0;
+  width: 44px;
+  height: 44px;
+  box-shadow: 0 2px 12px #0008;
+  border-radius: 50%;
+  background: #232323;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 2.1rem;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+  outline: none;
+}
+.scroll-to-top img, .view-desktop-btn img {
+  width: 22px;
+  height: 22px;
+  filter: invert(1);
+  display: block;
+  margin: 0 auto;
+}
+@media (max-width: 600px) {
+  .contact-bottom-icons {
+    gap: 16px;
+    margin-top: 18px;
+    padding-bottom: 4px;
+  }
+  .scroll-to-top, .view-desktop-btn {
+    width: 40px;
+    height: 40px;
+  }
+  .scroll-to-top img, .view-desktop-btn img {
+    width: 18px;
+    height: 18px;
+  }
 } 
