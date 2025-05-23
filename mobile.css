@@ -243,11 +243,7 @@ body.modal-open {
 
 /* Beautiful, glassy scroll-to-top button */
 .scroll-to-top {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  left: auto;
-  z-index: 10020;
+  position: static;
   background: #232323;
   color: #fff;
   border: none;
@@ -397,12 +393,7 @@ body.modal-open .scroll-to-top {
 }
 
 .view-desktop-btn {
-  position: fixed;
-  bottom: 24px;
-  left: 24px;
-  right: auto;
-  top: auto;
-  z-index: 10020;
+  position: static;
   background: #232323;
   color: #fff;
   border: none;
@@ -414,9 +405,10 @@ body.modal-open .scroll-to-top {
   align-items: center;
   justify-content: center;
   padding: 0;
+  font-size: 2.1rem;
+  margin: 0;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
   outline: none;
-  margin: 0;
 }
 .view-desktop-btn img {
   width: 28px;
@@ -459,23 +451,21 @@ body.modal-open .view-desktop-btn {
 }
 
 .bottom-bar {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: static;
   width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 24px 12px 24px;
-  z-index: 10020;
   background: none;
   pointer-events: none;
+  margin-top: 32px;
 }
 .bottom-bar button {
   pointer-events: auto;
 }
 .view-desktop-btn, .scroll-to-top {
+  position: static;
   background: #232323;
   color: #fff;
   border: none;
