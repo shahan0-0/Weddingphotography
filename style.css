@@ -897,11 +897,11 @@ section#portfolio {
   .portfolio-item {
     border-radius: 18px;
     overflow: hidden;
-    transition: box-shadow 0.3s, z-index 0.2s;
+    transition: box-shadow 0.35s cubic-bezier(.23,1.01,.32,1), z-index 0.2s;
   }
   .gallery img {
     border-radius: 18px;
-    transition: transform 0.3s, box-shadow 0.3s, border-radius 0.3s;
+    transition: transform 0.35s cubic-bezier(.23,1.01,.32,1), box-shadow 0.35s, border-radius 0.35s;
   }
   .portfolio-item:hover {
     z-index: 2;
@@ -911,12 +911,14 @@ section#portfolio {
   .portfolio-item:hover img {
     box-shadow: 0 8px 32px #0005, 0 2px 8px #e6b98044;
     border-radius: 18px;
+    transform: scale(1.08);
   }
 }
 
 /* Remove global border-radius: 0 for .gallery img and .portfolio-item */
 .gallery img, .portfolio-item {
   border-radius: unset;
+  transition: unset;
 }
 
 /* --- CONTACT SECTION: REMOVE TEXT BACKGROUNDS --- */
